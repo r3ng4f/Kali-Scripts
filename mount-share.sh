@@ -2,12 +2,24 @@
 ##############
 # Lista os pacotes que precisam ser atualizados
 sudo apt update
+echo "############################################"
+echo "###  Atualização dos pacotes concluída.  ###"
+echo "############################################"
+sleep 2s
 
 # Instala os pacotes open-vm-tools vim htop ttf-mscorefonts-installer offsec-pen300 offsec-pwk kali-wallpapers-all
 sudo apt install open-vm-tools vim htop ttf-mscorefonts-installer offsec-pen300 offsec-pwk kali-wallpapers-all burpsuite zaproxy feroxbuster -y
+echo "#####################################################"
+echo "###  Instação das ferramentas básicas concluída.  ###"
+echo "#####################################################"
+sleep 2s
 
 # Atualiza todo o sistema
 sudo apt full-upgrade -y
+echo "################################"
+echo "###  Atualização concluída.  ###"
+echo "################################"
+sleep 2s
 ##############
 
 # Define o local do arquivo.
@@ -27,6 +39,10 @@ EOF
 
 # Torna o script executável
 chmod +x $SCRIPT_PATH
+echo "##################################################"
+echo "###  Arquivo $SCRIPT_PATH criado com sucesso.  ###"
+echo "##################################################"
+sleep 2s
 
 # Define o local do arquivo no systemd
 SERVICE_PATH="/etc/systemd/system/vmware-mount.service"
@@ -45,14 +61,28 @@ RemainAfterExit=yes
 [Install]
 WantedBy=multi-user.target
 EOF
+echo "##################################################"
+echo "###  Arquivo $SERVICE_PATH criado com sucesso.  ###"
+echo "##################################################"
+sleep 2s
 
 # Recarrega o systemd para reconhecer o novo serviço
 systemctl daemon-reload
-
+echo "##############################"
+echo "###  Reiniciando o Deamon  ###"
+echo "##############################"
+sleep 2s
 # Habilita o serviço para iniciar na inicialização
 systemctl enable vmware-mount.service
+echo "########################################"
+echo "###  Serviço habilitado com sucesso.  ###"
+echo "########################################"
+sleep 2s
 
 # Inicia o serviço e exibe o status
 systemctl start vmware-mount.service
-
+echo "##################################"
+echo "###  Sistema pronto para uso.  ###"
+echo "##################################"
+sleep 2s
 exit 0
