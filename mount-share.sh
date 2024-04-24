@@ -1,4 +1,15 @@
 #!/bin/bash
+##############
+# Lista os pacotes que precisam ser atualizados
+sudo apt update
+
+# Instala os pacotes open-vm-tools vim htop ttf-mscorefonts-installer offsec-pen300 offsec-pwk kali-wallpapers-all
+sudo apt install open-vm-tools vim htop ttf-mscorefonts-installer offsec-pen300 offsec-pwk kali-wallpapers-all burpsuite zaproxy feroxbuster -y
+
+# Atualiza todo o sistema
+sudo apt full-upgrade -y
+##############
+
 # Define o local do arquivo.
 SCRIPT_PATH="/usr/local/bin/mount-vmware.sh"
 
