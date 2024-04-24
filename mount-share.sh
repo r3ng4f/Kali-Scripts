@@ -40,8 +40,7 @@ EOF
 # Torna o script executável
 chmod +x $SCRIPT_PATH
 echo "####################################################################"
-echo "###  Arquivo $SCRIPT_PATH criado com sucesso.  ###"
-#echo "###  Arquivo /usr/local/bin/mount-vmware.sh criado com sucesso.  ###"
+echo "###  Arquivo $SCRIPT_PATH criado com sucesso.                    ###"
 echo "####################################################################"
 sleep 2s
 
@@ -63,8 +62,7 @@ RemainAfterExit=yes
 WantedBy=multi-user.target
 EOF
 echo "##############################################################################"
-echo "###  Arquivo $SERVICE_PATH criado com sucesso.  ###"
-#echo "###  Arquivo /etc/systemd/system/vmware-mount.service criado com sucesso.  ###
+echo "###  Arquivo $SERVICE_PATH criado com sucesso.                             ###"
 echo "##############################################################################"
 sleep 2s
 
