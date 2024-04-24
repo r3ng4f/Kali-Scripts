@@ -39,9 +39,10 @@ EOF
 
 # Torna o script executável
 chmod +x $SCRIPT_PATH
-echo "##################################################"
+echo "####################################################################"
 echo "###  Arquivo $SCRIPT_PATH criado com sucesso.  ###"
-echo "##################################################"
+#echo "###  Arquivo /usr/local/bin/mount-vmware.sh criado com sucesso.  ###"
+echo "####################################################################"
 sleep 2s
 
 # Define o local do arquivo no systemd
@@ -61,9 +62,10 @@ RemainAfterExit=yes
 [Install]
 WantedBy=multi-user.target
 EOF
-echo "##################################################"
+echo "##############################################################################"
 echo "###  Arquivo $SERVICE_PATH criado com sucesso.  ###"
-echo "##################################################"
+#echo "###  Arquivo /etc/systemd/system/vmware-mount.service criado com sucesso.  ###
+echo "##############################################################################"
 sleep 2s
 
 # Recarrega o systemd para reconhecer o novo serviço
@@ -74,9 +76,9 @@ echo "##############################"
 sleep 2s
 # Habilita o serviço para iniciar na inicialização
 systemctl enable vmware-mount.service
-echo "########################################"
+echo "#########################################"
 echo "###  Serviço habilitado com sucesso.  ###"
-echo "########################################"
+echo "#########################################"
 sleep 2s
 
 # Inicia o serviço e exibe o status
